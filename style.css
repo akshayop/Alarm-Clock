@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: sans-serif;
+    background-color: black;
+}
+
+/* disabling the scrollbar from web */
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+/* Clock container */
+
+body,
+.clock-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clock-container {
+    flex-direction: column;
+    width: 45rem;
+    background-image: linear-gradient(45deg, #A9F1DF, #FFBBBB);
+    border-radius: 1rem;
+    margin: 1rem 0;
+}
+
+/* clock image */
+
+.clock-container img {
+    max-width: 6rem;
+}
+
+/* Clock name  */
+
+.clock-container h4 {
+    font-size: 1rem;
+}
+
+/* Real time  */
+
+.clock-container h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    margin-top: 2rem;
+}
+
+
+/* alaram setter design */
+
+.setAlaram
+.set-alaram-field{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    
+}
+
+.set-alaram-field .time,
+.set-alaram-field input[type=number] {
+    width: 7rem;
+    padding: 1rem 2rem;
+    margin: 0.5rem;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+}
+
+
+
+.buttons {
+    display: flex; 
+    justify-content: space-between;
+}
+
+/* Set Alaram button animation with keyframes */
+
+@keyframes buttonTransistion {
+    0% {
+      background-position: 1% 0%;
+      
+    }
+    50% {
+      background-position: 99% 100%;
+    }
+    100% {
+      background-position:  1% 0%;
+    }
+  }
+
+.buttons .set-alaram,
+.buttons .stop-alaram {
+    position: relative;
+    width: 40%;
+    height: 3rem;
+    margin: 1rem;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: black;
+    border-radius: 0.6rem; 
+    background-color: white;
+    animation: buttonTransistion 10s ease infinite;
+    transition: 0.6s;
+    overflow: hidden;
+}
+
+.buttons .set-alaram::before,
+.buttons .stop-alaram::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: rgba(190, 186, 186, 0.658);
+    width: 5rem;
+    height: 100%;
+    top: 0;
+    filter: blur(30px);
+    transform: translateX(-100px) skewX(-15deg);
+}
+
+ 
+.buttons .set-alaram::after,
+.buttons .stop-alaram::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: rgba(78, 77, 77, 0.2);
+    width: 1rem;
+    height: 100%;
+    top: 0;
+    filter: blur(5px);
+    transform: translateX(-100px) skewX(-15deg);
+}
+
+.buttons .set-alaram:hover {
+    background-color: rgb(107, 221, 62);
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.buttons .stop-alaram:hover {
+    background-color: red;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+  
+.buttons .set-alaram:hover::before, 
+.buttons .set-alaram:hover::after,
+.buttons .stop-alaram:hover::before, 
+.buttons .stop-alaram:hover::after {
+    transform: translateX(300px) skewX(-15deg);
+    transition: 1s;
+  }
+
+
+/* recent alarams */
+
+.recent-alarams {
+    width: 100%;
+}
+
+.recent-alarams h3 {
+    margin: 1rem 4rem;
+    width: auto;
+    height: 5rem;
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+    line-height: 2.5;
+    background-color: lightgrey;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.recent-alarams #recent-alarams-list {
+    list-style: none;
+    padding: 0 5rem; 
+    margin: 2rem 0;
+}
+
+.recent-alarams #recent-alarams-list li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    width: 100%;
+    margin: 0.5rem 0;
+    line-height: 2.2;
+}
+
+.recent-list button {
+    width: 10rem;
+    height: 3rem;
+    font-size: 0.9rem;
+    color:black;
+    padding: revert;
+    border-radius: 1rem;
+    background-color: rgb(253, 230, 226);
+    transition: 2s;
+    cursor: pointer;    
+}
+
+.recent-list button:hover{
+    background-color: red;
+    
+}
+
+/* Vaibrating Image while alaraming animation */
+
+@keyframes vibrate {
+    0% { transform: translate(0.1rem, 0.1rem) rotate(1deg); }
+    10% { transform: translate(-0.1rem, -0.2rem) rotate(-2deg); }
+    20% { transform: translate(-0.3rem, 0) rotate(2deg); }
+    30% { transform: translate(0.3rem, 0.2rem) rotate(1deg); }
+    40% { transform: translate(0.1rem, -0.1rem) rotate(2deg); }
+    50% { transform: translate(-0.1rem, 0.2rem) rotate(-2deg); }
+    60% { transform: translate(-0.3rem, 0.1rem) rotate(1deg); }
+    70% { transform: translate(0.3rem, 0.1rem) rotate(-2deg); }
+    80% { transform: translate(-0.1rem, -0.1rem) rotate(2deg); }
+    90% { transform: translate(0.1rem, 0.2rem) rotate(1deg); }
+    100% { transform: translate(0.1rem, -0.2rem) rotate(-2deg); }
+  }
+
+
+
+
+ 

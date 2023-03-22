@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alaram Clock</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <div class="clock-container">
+        <!-- clock image -->
+        <div id = "clock-image">
+            <img src="img/logo.png" alt="Clock Logo">
+        </div>
+        <h4>Alaram Clock</h4>
+        
+
+        <!-- real world time -->
+        <h1 id="real-time">00:00:00 AM</h1>
+
+        <!-- Select time of the alarm to be set-->
+
+        <form class="setAlaram">
+            <!-- Div to set hours, minutes & seconds -->
+            <div class="set-alaram-field">
+                
+                <input type="number" name="hr" placeholder="HH" max="12" min="00">
+                <input type="number" name="min" placeholder="MM" max="59" min="00">
+                <input type="number" name="sec" placeholder="SS" max="59" min="00">
+                <label>
+                        <select class="time" id="am/pm"></select>
+                </label>
+            </div>
+    
+            <!-- <div class="set-alarm-field"> -->
+               
+                 
+            <!-- Set and stop alaram -->
+            <div class = "buttons">
+                <button type="submit" class="set-alaram">Set Alarm</button>
+                <button type="reset" class="stop-alaram" id="stop-alaram">Stop Alarm</button>
+            </div>
+        </form>
+        
+        
+
+        <!-- Recent used alarams and current alarams -->
+
+        <div class="recent-alarams">
+
+            <h3>Recent Alarams</h3>
+            <ul id="recent-alarams-list">
+                
+            </ul>
+        </div>
+
+
+     </div>
+
+     <script type="text/javascript" src="script.js"></script>
+    
+</body>
+</html>

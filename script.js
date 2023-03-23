@@ -156,7 +156,6 @@ remove = (value) => {
     let newList = alaramList.filter((time) => time != value);
     alaramList.length = 0; // Clear contents
     alaramList.push.apply(alaramList, newList);
-    alert(`Successfully deleted ${printAlaram}`)
 }
 
 // Animate image 

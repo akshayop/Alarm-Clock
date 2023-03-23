@@ -123,7 +123,7 @@ addAlaram.addEventListener('submit', event => {
 });
 
 
-// Creating recent list design
+// Creating recent list design.
 
 function addNewAlaram(newAlaram) {
     const html = 
